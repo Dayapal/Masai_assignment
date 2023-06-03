@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    color: #c78b36;
+    font-size: 60px;
+  }
+  p {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+
+  }
+  img {
+    height: 280px;
+    width: 350px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }
+  .per {
+    color: #c78b36;
+  }
+  #para1 {
+    margin-left: 200px;
+    margin-right: 250px; 
