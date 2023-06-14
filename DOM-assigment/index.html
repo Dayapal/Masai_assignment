@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+</head>
+<body>
+
+    <label for="UserName">Enter your name</label>
+    <input  id="UserName" type="text"  placeholder="enter your name">
+    <button onclick="getData()">Submit</button>
+    <p>Display Name here</p>
+    <h1 id="nameDisplay:">Display name here</h1>
+
+
+</body>
+</html>
+<script>
+ function getData(){
+    var username = document.getElementById("UserName").value;
+    console.log(username)
+    document.getElementById("UserName").innerText = username;
+    document.getElementById("nameDisplay:").innerText = username;
+
+    
+ }
+
+</script>
