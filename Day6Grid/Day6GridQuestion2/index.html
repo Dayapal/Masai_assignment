@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+
+    <style>
+        
+      .container {
+        
+        display: grid;
+        width: 50%;
+        margin: 4rem auto;
+        grid-template-columns: 3fr 1fr;
+        gap: 10px;
+        
+    }
+    .abcd {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+        margin-bottom: 10px ;
+    
+
+
+      }
+      .acd {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        border-radius: 4px ;
+        gap: 10px;
+
+
+      }
+      
+      .cd{
+           display: grid;
+           grid-template-columns: 1fr 1fr ;
+           gap: 10px;
+
+
+      }
+      .box{
+        display: grid;
+        border-radius: 5px;
+        gap: 10px;
+        background-color: rgb(54, 64, 64);
+        color: white;
+        padding: 10px;
+      }
+      .e{
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="abcd">
+        <div class="acd">
+          <div class="box a">A</div>
+          <div class="cd">
+            <div class="box c">C</div>
+            <div class="box d">D</div>
+          </div>
+        </div>
+        <div class="box b">B</div>
+      </div>
+
+      <div class="E">
+        <div class="box e">E</div>
+      </div>
+    </div>
+  </body>
+</html>
