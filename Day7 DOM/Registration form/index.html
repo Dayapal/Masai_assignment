@@ -56,10 +56,19 @@
 
       function resetForm() {
         // Reset all the form elements to default values (blank "")
+        document.getElementById("name").value = "";
+        document.getElementById("gender").value = "";
+        document.getElementById("mobile").value = "";
+        document.getElementById("email").value = "";
+
       }
 
       function resetDisplay() {
         // Reset all the headings (h1, h2, h3, h4) to blank values
+        document.getElementById("dName").innerText = "";
+        document.getElementById("dGender").innerText = "";
+        document.getElementById("dMobile").innerText = "";
+        document.getElementById("dEmail").innerText = "";
       }
     </script>
   </body>

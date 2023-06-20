@@ -33,7 +33,7 @@ body {
     font-weight: bolder;
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 500px) and(min-width:375px){
     .container {
         grid-template-columns: repeat(2, 1fr);
     }

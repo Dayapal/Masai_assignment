@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniCalculator</title>
+    <style>
+        body{
+            margin: 50px 0px 0px  100px;
+        }
+       input{
+        margin: 5px;
+       }
+        button{
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input">
+    <input id="num1" type="number" placeholder="enter 1st number">
+    <input  id="num2" type="number" placeholder="enter  2nd number"><br><br>
+    <button onclick="add()">Add</button>
+    <button onclick="Subtract()">Subtract</button>
+    <button onclick="Multiply()">Multiply</button>
+    <button onclick="Divide()">Divide</button>
+</div>
+<script>
+
+
+function add() {
+var a = document.getElementById("num1").value;
+var b = document.getElementById("num2").value;
+console.log(Number(a) + (Number(b)))
+
+
+}
+function Divide() {
+var a = document.getElementById("num1").value;
+var b = document.getElementById("num2").value;
+console.log(Number(a) / (Number(b)))
+
+
+}
+function Subtract() {
+var a = document.getElementById("num1").value;
+var b = document.getElementById("num2").value;
+console.log(Number(a) -(Number(b)))
+
+
+}
+function Multiply() {
+var a = document.getElementById("num1").value;
+var b = document.getElementById("num2").value;
+console.log(Number(a) *(Number(b)))
+
+
+}
+</script>
+    
+</body>
+</html>
