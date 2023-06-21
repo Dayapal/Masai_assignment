@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We(Assigment)</title>
+    <style>
+        .container{
+            padding: 100px 60px 0px 0px;
+            display: flex;
+            margin: 300px;
+            border: 2px solid black;
+            width: 600px;
+            height: 300px;
+            justify-content: center;
+            justify-content: space-between;
+            background-image: linear-gradient(rgb(108, 254, 162), rgb(220, 76, 236));
+        }
+        div{
+            border: 2px solid red;
+            height: 140px;
+            width: 170px;
+            text-align: center;
+            box-shadow: 1px 0px  1px  4px rgb(22, 197, 12);
+            border-radius: 20px;
+            background-color: rgb(232, 235, 22);
+        }
+        div span {
+            font-size: 50px;
+            font-weight: bolder;
+            color: rgb(15, 9, 9);
+            
+        }
+        h1{
+            font-size: 40px;
+            color: rgb(2, 54, 9);
+            text-shadow: 0 0 3px #e90f42;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="container"><br>
+    <div class="hourf">
+    <span id="hour">00</span>
+    <h1>hour</h1> 
+</div>
+     <div class="minr">
+    <span id="min">00</span>
+    <h1>minutes</h1>
+</div>
+<div class="secf">
+    <span id="sec">00</span>
+    <h1>seconds</h1>
+</div>
+   </div>
+    
+</body>
+
+
+<script>
+    let hour  = document.getElementById("hour")
+    let min  = document.getElementById("min")
+    let sec  = document.getElementById("sec")
+
+
+    let H = 0;
+    let M = 0;
+    let S = 0;
+
+
+
+  setInterval(function(){
+    S++
+    if(S>=60){
+        S=0;
+        M++;
+        if(M>=60){
+            M=0;
+            H++
+                hour.innerText = H;
+            }
+            min.innerText = M
+        }
+         sec.innerText = S;
+
+    },1000)
+
+
+</script>
+
+
+
+</html>
