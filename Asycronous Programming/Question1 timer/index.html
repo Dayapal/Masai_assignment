@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+    <style>
+
+
+#timer {
+        padding: 20px;
+    margin: 80px 0px 0px 300px;
+    width: 200px;
+    /* border: 2px solid  black; */
+      height: 70px;  
+      font-size: 35px;
+      text-align: center;
+      background-color: rgb(84, 236, 68);
+      box-shadow: rgba(236, 26, 197, 0.35) 0px 10px 15px;
+
+    }
+    .HMS{
+        padding: 20px;
+        margin: 30px 0px 0px 250px;
+        width: 400px;
+        height: 100px;
+        border: 2px solid green;
+        background-image: linear-gradient(rgb(243, 0, 0) , rgb(62, 220, 88));
+        border-radius: 10px;
+        box-shadow: rgba(21, 3, 183, 0.35) 0px 5px 15px;
+
+    
+    }
+    #hours{
+        width: 120px;
+        height: 50px;
+        font-size: 25px;
+        font-weight: bolder;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: rgba(21, 3, 183, 0.35) 0px 5px 15px;
+        
+
+        
+
+    } #minutes{
+        width: 120px;
+        height: 50px;
+        font-size: 25px;
+        font-weight: bolder;
+        color: black;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: rgba(21, 3, 183, 0.35) 0px 5px 15px;
+
+
+
+
+    } #seconds{
+        width: 120px;
+        height: 50px;
+        font-size: 25px;
+        font-weight: bolder;
+        box-shadow: rgba(21, 3, 183, 0.35) 0px 5px 15px;
+        border: none;
+        border-radius: 10px;
+    }
+    .btn{
+        padding: 30px;
+        margin: 30px 0px 0px 250px;
+        width: 400px;
+        height: 100px;
+        border: 2px solid green;
+        background-image: linear-gradient(rgb(243, 0, 0) , rgb(62, 220, 88));
+        border-radius: 10px;
+        box-shadow: rgba(21, 3, 183, 0.35) 0px 5px 15px;
+        
+    }
+    .btn button{
+        font-size: 35px;
+        border: none;
+        background-color: rgb(244, 229, 244);
+        box-shadow: rgba(21, 3, 183, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+
+    }
+    button:hover{
+        cursor: pointer;
+        color: rgb(47, 68, 255);
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+    <div class="HMS">
+      <input type="number" id="hours" min="0" placeholder="Hours">
+      <input type="number" id="minutes" min="0" max="59" placeholder="Minutes">
+      <input type="number" id="seconds" min="0" max="59" placeholder="Seconds">
+    </div>
+    <div class="btn">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  
+    <script>
+      var timerInterval;
+      var hoursInput = document.getElementById('hours');
+      var minutesInput = document.getElementById('minutes');
+      var secondsInput = document.getElementById('seconds');
+      var timerDisplay = document.getElementById('timer');
+  
+      function startTimer() {
+        var totalSeconds = calculateTotalSeconds();
+        if (totalSeconds > 0) {
+          timerInterval = setInterval(function() {
+            totalSeconds--;
+            if (totalSeconds <= 0) {
+              clearInterval(timerInterval);
+            }
+            displayTime(totalSeconds);
+          }, 1000);
+        }
+      }
+  
+      function pauseTimer() {
+        clearInterval(timerInterval);
+      }
+  
+      function resetTimer() {
+        clearInterval(timerInterval);
+        hoursInput.value = '';
+        minutesInput.value = '';
+        secondsInput.value = '';
+        displayTime(0);
+      }
+  
+      function calculateTotalSeconds() {
+        var hours = parseInt(hoursInput.value) || 0;
+        var minutes = parseInt(minutesInput.value) || 0;
+        var seconds = parseInt(secondsInput.value) || 0;
+  
+        return hours * 3600 + minutes * 60 + seconds;
+      }
+  
+      function displayTime(totalSeconds) {
+        var hours = Math.floor(totalSeconds / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+  
+        timerDisplay.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+      }
+  
+      function formatTime(time) {
+        return time.toString().padStart(2, '0');
+      }
+    </script>
+  
+
+
+
+    
+</body>
+</html>
