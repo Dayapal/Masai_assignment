@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetching Data from the API</title>
+  </head>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    #container > div {
+      width: 90%;
+      border: 2px solid red;
+    }
+    #container > div > img {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <h2>
+      Hey hi Daya Pal Here I am going to teach you that how to fetch data from
+      the API
+    </h2>
+    <select name="" id="filter">
+      <option value="">Select cateogry</option>
+      <option value="men's clothing">men's clothing</option>
+      <option value="women's clothing">women's clothing</option>
+      <option value="jewelery">jewelery</option>
+      <option value="electornics">Electronic Device</option>
+    </select>
+    <hr />
+    <div id="container"></div>
+  </body>
+
+  <script>
+    // we need to fetch it
+    let filter = document.getElementById("filter")
+   
+    let parent = document.getElementById("container");
+    let API = "https://fakestoreapi.com/products";
+    let response = fetch(API);
+
+    let arr = []
+
+    response
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((data) => {
+
+        display(data);
+        arr.push(data)
+      });
+       console.log(arr)
+    // display on DOM
+    function display(data) {
+      data.forEach((element) => {
+        // console.log(element)
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", element.image);
+
+        let h4 = document.createElement("h4");
+        h4.innerText = element.title;
+
+        let h1 = document.createElement("h3");
+        h1.innerText  = element.category;
+
+        let p = document.createElement("p");
+        p.innerText = element.price;
+
+        div.append(img, h4, p,h1);
+        parent.append(div);
+      });
+    }
+  </script>
+</html>
+
+<!-- <div>
+    <img src="" alt="">
+    <title></title>
+    <h4></h4>
+    <p></p>
+
+</div> -->

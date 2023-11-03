@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All to dos</title>
+</head>
+<style>
+    #container{
+        background-color: rgb(63, 237, 54);
+     margin: 100px;
+    }
+    h1{
+        color: red;
+    }
+    #container > div{
+        background-color: rgb(189, 255, 66);
+        margin: 100px;
+        width: 400px;
+    }
+  
+</style>
+<body>
+    <h1>Hi I am polishing myself</h1>
+    <div id="container">
+   <hr>
+
+    </div>
+
+
+</body>
+<script>
+
+let parent = document.getElementById("container")
+   
+ let  API = "https://jsonplaceholder.typicode.com/todos"
+ let response1 = fetch(API)
+// console.log(response1)
+
+ response1.then((resp)=>{
+    return(resp.json())
+ }).then((data)=>{
+    display(data)
+ })
+
+
+function display(data){
+    data.forEach(element => {
+    let div = document.createElement("div")
+    let h1 = document.createElement("h1")
+    h1.innerText = element.userId;
+
+    let h2 = document.createElement("h2")
+    h2.innerText = element.id
+
+    let h2title = document.createElement("h2")
+    h2title.innerText = element.title;
+
+    let h2status = document.createElement("h3")
+    h2status.innerText = element.completed
+
+    let hr = document.createElement("hr")
+
+    
+
+
+
+
+    div.append(h1,h2,h2title,h2status,hr)
+    parent.append(div)
+    });
+
+}
+</script>
+</html>
+
+<!-- 
+<div>
+
+    <h1>userId</h1>
+    <h2>id</h2>
+    <h2>title</h2>
+    <h3>completed</h3>
+</div> -->

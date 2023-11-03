@@ -14,9 +14,17 @@
         button{
             margin: 15px;
         }
+        #display{
+            width: 200px;
+            height: 40px;
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
+    <div >
+        <h2 id="display">hi</h2>
+    </div>
     <div class="input">
     <input id="num1" type="number" placeholder="enter 1st number">
     <input  id="num2" type="number" placeholder="enter  2nd number"><br><br>
@@ -31,7 +39,11 @@
 function add() {
 var a = document.getElementById("num1").value;
 var b = document.getElementById("num2").value;
+var display = document.getElementById("display");
+display.innerHTML = (Number(a) + (Number(b)));
 console.log(Number(a) + (Number(b)))
+alert(Number(a) + (Number(b)))
+
 
 
 }
@@ -41,11 +53,13 @@ var b = document.getElementById("num2").value;
 console.log(Number(a) / (Number(b)))
 
 
+
 }
 function Subtract() {
 var a = document.getElementById("num1").value;
 var b = document.getElementById("num2").value;
 console.log(Number(a) -(Number(b)))
+alert(Number(a) -(Number(b)))
 
 
 }

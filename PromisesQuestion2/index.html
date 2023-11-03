@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaitPromise</title>
+</head>
+<body>
+    <h1>WaitPromise</h1>
+    <h3>Write your MS time</h3>
+    <!-- <input type="number" value=" "> -->
+</body>
+
+<script>
+let waitPromise = ((time)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+           resolve("Promise resolve")
+        },time)
+        
+    })
+    
+})
+waitPromise(2000).then((data)=>
+alert(data)
+)
+
+
+
+// function  waitPromise(time){
+//         return new Promise((resolve,reject)=>{
+//           setTimeout(()=>{
+//            resolve("Promise resolve")
+//           },time)
+//         })
+//     }
+//   waitPromise(4000).then((data)=>
+//   alert(data)
+//   )
+</script>
+</html>
